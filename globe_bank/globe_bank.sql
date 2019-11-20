@@ -1,3 +1,17 @@
+DROP TABLE IF EXISTS `admins`;
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `hashed_password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_username` (`username`)
+);
+
+INSERT INTO `admins` VALUES (1,'John','Public','john@somewhere.com','johnqpublic','$2y$10$lkeLxdtcxhm3QZSvixDkpeI/6qvy2Z8GVKWoSzLMXqv0M5k3J67J6');
+
 DROP TABLE IF EXISTS `pages`;
 CREATE TABLE `pages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
